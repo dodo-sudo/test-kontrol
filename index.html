@@ -50,7 +50,8 @@
                 const sonucDiv = document.getElementById('sonuc');
                 if (response.data === true) {
                     sonucDiv.innerHTML = 'TC Kimlik Doğrulaması Başarılı!';
-                    sonucDiv.style.color = 'green';
+                    sonucDiv.style.color = '#00FF86';
+                    sonucDiv.style.fontWeight = 'bold';
                 } else {
                     sonucDiv.innerHTML = 'TC Kimlik Doğrulaması Başarısız!';
                     sonucDiv.style.color = 'red';
