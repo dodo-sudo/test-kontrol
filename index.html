@@ -29,17 +29,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // Formu alıyoruz
+        
         document.getElementById('tcForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Formun sayfayı yenilemesini engelliyoruz
+            event.preventDefault(); 
 
-            // Form verilerini alıyoruz
+            
             const ad = document.getElementById('ad').value;
             const soyad = document.getElementById('soyad').value;
             const dogumYili = document.getElementById('dogumYili').value;
             const tcKimlikNo = document.getElementById('tcKimlikNo').value;
 
-            // Netlify functions üzerinden doğrulama yapıyoruz
+         
             axios.post('/.netlify/functions/verify', {
                 ad: ad,
                 soyad: soyad,
