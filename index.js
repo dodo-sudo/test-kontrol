@@ -16,7 +16,7 @@ app.post('/verify', async (req, res) => {
   const { ad, soyad, dogumYili, tcKimlikNo } = req.body;
 
   try {
-   
+    
     const verification = await tcKimlikDogrulama({
       ad,
       soyad,
@@ -24,7 +24,7 @@ app.post('/verify', async (req, res) => {
       tcKimlikNo
     });
 
-   
+    
     if (verification) {
       res.send('<h3>Doğrulama Başarılı!</h3><a href="/">Yine dene</a>');
     } else {
