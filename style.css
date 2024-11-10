@@ -39,7 +39,8 @@ input{
     border: 1px solid #00FF86;
     width: 50%;
     font-size: 16px;
-    
+    padding-left: 5px;
+    text-transform: uppercase;
 }
 label{
     font-weight: bold;
