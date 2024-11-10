@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TC Kimlik Doğrulama</title>
+    <title>Kontrol</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>TC Kimlik Doğrulama</h1>
+    <h1>Kontrol</h1>
     <form id="tcForm">
         <label for="ad">Ad: </label>
-        <input type="text" id="ad" name="ad" required><br><br>
+        <input type="text" id="ad" name="ad" required><br>
 
         <label for="soyad">Soyad: </label>
-        <input type="text" id="soyad" name="soyad" required><br><br>
+        <input type="text" id="soyad" name="soyad" required><br>
 
         <label for="dogumYili">Doğum Yılı: </label>
-        <input type="text" id="dogumYili" name="dogumYili" required><br><br>
+        <input type="text" id="dogumYili" name="dogumYili" required><br>
 
-        <label for="tcKimlikNo">TC Kimlik No: </label>
-        <input type="text" id="tcKimlikNo" name="tcKimlikNo" required><br><br>
+        <label for="tcKimlikNo">Kimlik No: </label>
+        <input type="text" id="tcKimlikNo" name="tcKimlikNo" required><br>
 
-        <button type="submit">Doğrula</button>
+        <button class="btn" type="submit">Doğrula</button>
     </form>
 
     <h2>Sonuç:</h2>
@@ -46,7 +47,6 @@
                 tcKimlikNo: tcKimlikNo
             })
             .then(function(response) {
-                // Sonucu ekrana yazdırıyoruz
                 const sonucDiv = document.getElementById('sonuc');
                 if (response.data === true) {
                     sonucDiv.innerHTML = 'TC Kimlik Doğrulaması Başarılı!';
@@ -62,17 +62,5 @@
         });
     </script>
 
- <h1>TC Kimlik Doğrulama</h1>
-
-    <!-- Form kısmı ve diğer içerikler buraya gelecek -->
-
-    <footer>
-        <p>Güncellenme Tarihi: <span id="current-date"></span></p>
-    </footer>
-
-    <script>
-        // Sayfa yüklendiğinde güncel tarihi footer'a ekleyelim
-        document.getElementById("current-date").textContent = new Date().toLocaleString();
-    </script>
 </body>
 </html>
