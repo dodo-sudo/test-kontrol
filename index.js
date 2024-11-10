@@ -6,17 +6,17 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Ana sayfa (HTML formunu gösterir)
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Formdan gelen POST isteğini işleme
+
 app.post('/verify', async (req, res) => {
   const { ad, soyad, dogumYili, tcKimlikNo } = req.body;
 
   try {
-    // TC Kimlik doğrulama işlemi
+   
     const verification = await tcKimlikDogrulama({
       ad,
       soyad,
@@ -24,7 +24,7 @@ app.post('/verify', async (req, res) => {
       tcKimlikNo
     });
 
-    // Doğrulama sonucunu döndürme
+   
     if (verification) {
       res.send('<h3>Doğrulama Başarılı!</h3><a href="/">Yine dene</a>');
     } else {
@@ -35,7 +35,7 @@ app.post('/verify', async (req, res) => {
   }
 });
 
-// Sunucuyu çalıştırma
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Sunucu http://localhost:${PORT} adresinde çalışıyor.`);
