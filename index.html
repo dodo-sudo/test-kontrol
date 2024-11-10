@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Kontrol</h1>
+    
     <form id="tcForm">
-        <label for="ad">Ad: </label>
+        <label class="label" for="ad">Ad: </label>
         <input type="text" id="ad" name="ad" required><br>
 
-        <label for="soyad">Soyad: </label>
+        <label class="label" for="soyad">Soyad: </label>
         <input type="text" id="soyad" name="soyad" required><br>
 
-        <label for="dogumYili">Doğum Yılı: </label>
+        <label class="label" for="dogumYili">Doğum Yılı: </label>
         <input type="text" id="dogumYili" name="dogumYili" required><br>
 
-        <label for="tcKimlikNo">Kimlik No: </label>
+        <label class="label" for="tcKimlikNo">Kimlik No: </label>
         <input type="text" id="tcKimlikNo" name="tcKimlikNo" required><br>
 
         <button class="btn" type="submit">Doğrula</button>
@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        
+       
         document.getElementById('tcForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
 
@@ -39,7 +39,7 @@
             const dogumYili = document.getElementById('dogumYili').value;
             const tcKimlikNo = document.getElementById('tcKimlikNo').value;
 
-         
+           
             axios.post('/.netlify/functions/verify', {
                 ad: ad,
                 soyad: soyad,
