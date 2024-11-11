@@ -73,3 +73,7 @@ button:hover{
     align-items: center;
     justify-content: right;
 }
+
+#sonuc{
+    height: 30px;
+}
